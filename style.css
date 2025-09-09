@@ -1,0 +1,141 @@
+/* Reset & Base */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #1f1c2c, #928dab);
+  color: #eee;
+  transition: background 0.4s, color 0.4s;
+}
+body.dark {
+  background: #0f0f0f;
+  color: #ddd;
+}
+h1, h2, h3 { font-weight: 700; }
+
+/* Header */
+header {
+  position: sticky; top: 0; z-index: 1000;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(10px);
+  padding: 15px 8%;
+}
+nav {
+  display: flex; justify-content: space-between; align-items: center;
+}
+.logo { font-size: 1.6rem; font-weight: bold; color: #ff9800; }
+nav ul { list-style: none; display: flex; gap: 20px; }
+nav ul li a {
+  color: #fff; font-weight: 500; transition: 0.3s;
+}
+nav ul li a:hover { color: #ff9800; }
+#modeToggle {
+  border: none; background: transparent; color: #fff;
+  font-size: 1.4rem; cursor: pointer;
+}
+
+/* Hero */
+#hero {
+  min-height: 100vh; display: flex; justify-content: space-between; align-items: center;
+  padding: 80px 8%;
+}
+.hero-content { max-width: 600px; }
+.hero-content h2 span { color: #ff9800; }
+.hero-img-wrapper { text-align: center; }
+.hero-img {
+  width: 280px; border-radius: 50%;
+  border: 5px solid #ff9800;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+.btn {
+  margin-top: 20px; display: inline-block;
+  padding: 12px 25px; border-radius: 30px;
+  background: #ff9800; color: #fff;
+  font-weight: 600; transition: 0.3s;
+}
+.btn:hover { background: #ff5722; }
+.btn.secondary { background: transparent; border: 2px solid #ff9800; }
+.btn.secondary:hover { background: #ff9800; color: #fff; }
+
+/* Sections */
+.section { padding: 70px 8%; text-align: center; }
+.section h2 { font-size: 2rem; margin-bottom: 20px; }
+
+/* Glass Cards */
+.cards-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px; margin-top: 30px;
+}
+.card.glass {
+  background: rgba(255,255,255,0.1);
+  border-radius: 15px; padding: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s;
+}
+.card.glass:hover { transform: translateY(-10px) scale(1.02); }
+.card img { width: 100%; border-radius: 10px; margin-bottom: 15px; }
+
+/* Skills */
+.skills-grid {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 15px;
+}
+.skill {
+  padding: 10px 20px; border-radius: 20px;
+  background: #ff9800; color: #fff;
+  font-weight: 600; transition: 0.3s;
+}
+.skill:hover { background: #ff5722; transform: scale(1.1); }
+
+/* Contact */
+#contact form {
+  display: flex; flex-direction: column; gap: 15px;
+  max-width: 500px; margin: auto;
+}
+#contact input, #contact textarea {
+  padding: 12px; border-radius: 8px;
+  border: none; outline: none;
+}
+#contact button {
+  background: #ff9800; color: #fff;
+  border: none; padding: 12px;
+  border-radius: 30px; font-weight: 600;
+  cursor: pointer; transition: 0.3s;
+}
+#contact button:hover { background: #ff5722; }
+
+/* Scroll to Top */
+#scrollTopBtn {
+  position: fixed; bottom: 30px; right: 30px;
+  width: 50px; height: 50px; border-radius: 50%;
+  background: #ff5722; color: #fff;
+  border: none; font-size: 1.3rem;
+  cursor: pointer; display: none;
+  justify-content: center; align-items: center;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+}
+#scrollTopBtn:hover { background: #ff9800; }
+
+/* Footer */
+footer {
+  padding: 30px; text-align: center;
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: blur(8px);
+  color: #fff;
+}
+.social-icons { margin-top: 15px; }
+.social-icons a {
+  color: #fff; font-size: 1.5rem; margin: 0 10px;
+  transition: 0.3s;
+}
+.social-icons a:hover { color: #ff9800; transform: scale(1.2); }
+
+/* Animations */
+.fade-in { opacity: 0; transform: translateY(30px); transition: 0.8s ease; }
+.fade-in.show { opacity: 1; transform: translateY(0); }
+
+/* Responsive */
+@media (max-width: 768px) {
+  #hero { flex-direction: column; text-align: center; }
+  .hero-img { margin-top: 20px; }
+  nav ul { display: none; } /* Could add mobile menu later */
+}
